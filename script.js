@@ -8,7 +8,7 @@ const searchButton = document.getElementById('search-button');
 async function fetchRandomNews() {
   try {
     const apiUrl = `https://newsapi.org/v2/top-headlines?country=us&pageSize=10&apiKey=${apiKey}`;
-    const response = await fetch(apiUrl);
+    const response = await fetch(apiUrl, { mode: 'no-cors' });
     const data = await response.json();
     return data.articles;
   } catch (error) {
